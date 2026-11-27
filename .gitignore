@@ -1,0 +1,26 @@
+
+# Build files
+build/
+cmake-build-*/
+
+# Executables and object files
+*.o
+*.out
+kmeans
+
+# Generated datasets
+data/*.bin
+data/*.csv
+
+# Results
+results/*.csv
+results/*.png
+
+# IDE files
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
