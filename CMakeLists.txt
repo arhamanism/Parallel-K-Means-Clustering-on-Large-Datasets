@@ -42,3 +42,23 @@ target_compile_options(kmeans_openmp PRIVATE
 target_link_libraries(kmeans_openmp
     PRIVATE OpenMP::OpenMP_CXX
 )
+
+#MPI implementation
+
+find_package(MPI REQUIRED)
+
+add_executable(kmeans_mpi
+    src/main_mpi.cpp
+    src/kmeans_mpi.cpp
+    src/dataset.cpp
+)
+
+target_compile_options(kmeans_mpi PRIVATE
+    -Wall
+    -Wextra
+    -O2
+)
+
+target_link_libraries(kmeans_mpi
+    PRIVATE MPI::MPI_CXX
+)
