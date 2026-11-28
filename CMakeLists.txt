@@ -62,3 +62,21 @@ target_compile_options(kmeans_mpi PRIVATE
 target_link_libraries(kmeans_mpi
     PRIVATE MPI::MPI_CXX
 )
+
+# Hybrid MPI + OpenMP implementation
+
+add_executable(kmeans_hybrid
+    src/main_hybrid.cpp
+    src/kmeans_hybrid.cpp
+    src/dataset.cpp
+)
+
+target_compile_options(kmeans_hybrid PRIVATE
+    -Wall
+    -Wextra
+    -O2
+)
+
+target_link_libraries(kmeans_hybrid
+    PRIVATE MPI::MPI_CXX OpenMP::OpenMP_CXX
+)
